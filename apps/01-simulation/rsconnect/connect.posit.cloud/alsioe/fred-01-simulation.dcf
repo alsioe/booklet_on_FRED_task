@@ -1,0 +1,12 @@
+name: fred-01-simulation
+title: fred-01-simulation
+username: alsioe
+account: alsioe
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a1e97f-e433-dc97-2647-3ec4ba025717
+bundleId:
+url: https://connect.posit.cloud/alsioe/content/01a1e97f-e433-dc97-2647-3ec4ba025717
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

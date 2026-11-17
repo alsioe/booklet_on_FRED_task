@@ -1,0 +1,19 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "FRED: Interactive Model Fitting"
+  chapters:
+    - index.qmd
+    - chapters/01-simulation.qmd
+    - chapters/02-grid-search.qmd
+    - chapters/03-optim.qmd
+    - chapters/04-stan.qmd
+  page-navigation: true
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true

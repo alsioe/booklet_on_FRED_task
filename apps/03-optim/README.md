@@ -1,0 +1,1 @@
+This is an extracted Shiny app. Copy the required original R scripts into `r_scripts/` (and the Stan file into `stan_scripts/` for chapter 4) before running or deploying. See the project README for the full dependency list.

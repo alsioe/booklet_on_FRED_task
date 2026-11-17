@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "chapters/01-simulation.html",
+    "href": "chapters/01-simulation.html",
+    "title": "2  Simulating FRED task data",
+    "section": "",
+    "text": "This Quarto document highlights different approaches to fit decision-making models to data from the Fixed Ratio Effort Discounting (FRED) task. We will simulate choices and outcomes from a single session and mouse. (And proceed to multiple mice later on.)\nThe mathematical model used to simulate the data (the generative model) has got two-three parameters, \\(\\alpha\\) (response bias - the adjusted indifference point), \\(\\beta_{Effort}\\) (effort sensitivity - the rate at which the tendency to choose the high-reward option decreases, as the effort goes up across the session), and possibly \\(\\epsilon\\) (lapse rate - the tendency to choose the low-reward option even though the effort is equal between the two choices). In the code, these models are referred to as simply “ab” or “abe”. Briefly, the abe model uses a subjective value estimation rule\n\\[\nSV_{t, \\mathrm{high}}= - \\beta ( E_{t,\\mathrm{high}}-\\alpha )\n\\]\nwhere \\(SV\\) is the (estimated) subjective value of the high-reward option on trial \\(t\\) and \\(E_{t, \\mathrm{high}}\\) is the effort (the fixed ratio) associated with the high-reward response option. This subjective value is then translated into a probability of choosing high-reward using the following action selection rule:\n\\[\nP_{t,\\mathrm{high}}\n=\n\\frac{1-\\epsilon}\n{1+\\exp(-SV_{t,\\mathrm{high}})}.\n\\]\nYou can see below what happens with choices in the task when you vary alpha, beta and epsilon (e.g., high epsilon makes choices at low effort more stochastic).\nYou can come back to these sliders later on as you try to fit the models to (different) data. The examples below have removed epsilon to be able to visualise the relationships between alpha and beta in 2D.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Simulating FRED task data</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "FRED: Interactive Model Fitting",
+    "section": "",
+    "text": "1 Welcome\nThis interactive booklet introduces simulation and single-subject model fitting for the Fixed Ratio Effort Discounting (FRED) task.\nEach chapter embeds a separately hosted Shiny application. Replace the example URLs with your own deployed app addresses.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-grid-search.html",
+    "href": "chapters/02-grid-search.html",
+    "title": "3  Grid search",
+    "section": "",
+    "text": "3.1 Fitting models to observed choices\nIn an experiment we will only see the data and we then need to fit a model to the data to determine, using maximum likelihood estimation or other mechanisms, 1) which model (or models) is most likely to have governed the choices made by the subject and 2) which parameter values best describe the behaviour observed.\nWe will illustrate four different approaches to achieve this.\nWe will regularise the estimates using our knowledge about likely values of \\(\\alpha\\), \\(\\beta\\), and \\(\\epsilon\\). This will ensure that we get good fits that do not drift off to extreme values (more on this soon!). This approach requires us to choose PRIORS for all three parameters separately. Illustrated below is the joint likelihood across a range of parameter values. Note that \\(\\alpha\\) is bounded by 0 and 1, and that \\(\\beta\\) is bounded by 0.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Grid search</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-grid-search.html#fitting-models-to-observed-choices",
+    "href": "chapters/02-grid-search.html#fitting-models-to-observed-choices",
+    "title": "3  Grid search",
+    "section": "",
+    "text": "Grid search\nMaximum likelihood estimation (MLE) with a function optim()\nMaximum a posteriori (MAP) sampling using priors\nBayesian modelling using Stan",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Grid search</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-grid-search.html#exploring-the-parameter-space",
+    "href": "chapters/02-grid-search.html#exploring-the-parameter-space",
+    "title": "3  Grid search",
+    "section": "3.2 Exploring the parameter space",
+    "text": "3.2 Exploring the parameter space\nGrid search simply loops across a large number of different combinations of parameter values and calculates, for each of these combinations, the log likelihood of those paramaters, given the data. This process is slow but explores the entire parameter space which can sometimes be useful.\nShown below is the normal grid search to the left and, to the right, a grid search where the parameter values that the experimenter (you!) deem unresonable are penalised using prior distributions of likelihoods for all the parameters (illustrated by the grey plot in the centre). Note how the parameter combination with the maximum likelihood (illustrated by the cross) shifts around depending on the priors. This has a stronger influence when the data are weak, e.g. when you only have few trials from the subject.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Grid search</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-optim.html",
+    "href": "chapters/03-optim.html",
+    "title": "4  Optimisation using optim()",
+    "section": "",
+    "text": "We can also fit a model using the optim() function in R (or similar approaches for maximum likelihood estimation or maximum a posteriori approaches). Here, the optimiser function proposes different parameter values and evaluates the maximum likelihood for each proposal, in order to move along a gradient until it reaches a maximum value. These steps are illustrated below - they look chaotic as the optimiser initially makes large movements but there are then several small steps near the maximum.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Optimisation using `optim()`</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04-stan.html",
+    "href": "chapters/04-stan.html",
+    "title": "5  Single-subject Bayesian estimation with Stan",
+    "section": "",
+    "text": "When we use Bayesian statistics to fit a model to the data, the sampler does not scan the entire parameter space with equal interest and it does not look for maximum likelihood (point) estimates. Instead, we get the “samples” (parameter combinations) from the likelihood distribution. These samples together represent the “posterior distribution”, the likelihoods of the parameter values given the data and the priors.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Single-subject Bayesian estimation with Stan</span>"
+    ]
+  }
+]

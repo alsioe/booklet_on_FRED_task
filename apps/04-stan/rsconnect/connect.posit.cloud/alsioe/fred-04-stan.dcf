@@ -1,0 +1,12 @@
+name: fred-04-stan
+title: fred-04-stan
+username: alsioe
+account: alsioe
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a1e981-2980-0a21-5d4f-69d184b38774
+bundleId:
+url: https://connect.posit.cloud/alsioe/content/01a1e981-2980-0a21-5d4f-69d184b38774
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

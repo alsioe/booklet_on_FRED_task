@@ -1,0 +1,12 @@
+name: fred-02-grid-search
+title: fred-02-grid-search
+username: alsioe
+account: alsioe
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a1e97e-81ea-fc44-7605-22f28efde00b
+bundleId:
+url: https://connect.posit.cloud/alsioe/content/01a1e97e-81ea-fc44-7605-22f28efde00b
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

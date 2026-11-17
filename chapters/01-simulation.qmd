@@ -1,0 +1,30 @@
+# Simulating FRED task data
+
+This Quarto document highlights different approaches to fit decision-making models to data from the Fixed Ratio Effort Discounting (FRED) task. We will simulate choices and outcomes from a single session and mouse. (And proceed to multiple mice later on.)
+
+The mathematical model used to simulate the data (the generative model) has got two-three parameters, $\alpha$ (response bias - the adjusted indifference point),  $\beta_{Effort}$ (effort sensitivity - the rate at which the tendency to choose the high-reward option decreases, as the effort goes up across the session), and possibly $\epsilon$ (lapse rate - the tendency to choose the low-reward option even though the effort is equal between the two choices). In the code, these models are referred to as simply "ab" or "abe". Briefly, the abe model uses a subjective value estimation rule
+
+$$
+SV_{t, \mathrm{high}}= - \beta ( E_{t,\mathrm{high}}-\alpha )
+$$
+
+where $SV$ is the (estimated) subjective value of the high-reward option on trial $t$ and $E_{t, \mathrm{high}}$ is the effort (the fixed ratio) associated with the high-reward response option. This subjective value is then translated into a probability of choosing high-reward using the following action selection rule:
+
+$$
+P_{t,\mathrm{high}}
+=
+\frac{1-\epsilon}
+{1+\exp(-SV_{t,\mathrm{high}})}.
+$$
+
+You can see below what happens with choices in the task when you vary alpha, beta and epsilon (e.g., high epsilon makes choices at low effort more stochastic).
+
+You can come back to these sliders later on as you try to fit the models to (different) data. The examples below have removed epsilon to be able to visualise the relationships between alpha and beta in 2D.
+
+
+<!-- Replace the URL with the deployed Shiny app URL. -->
+<iframe src="https://01a1e97f-e433-dc97-2647-3ec4ba025717.share.connect.posit.cloud/"
+        width="100%"
+        height="750"
+        style="border:none;">
+</iframe>

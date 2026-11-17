@@ -1,0 +1,11 @@
+# Optimisation using `optim()`
+
+We can also fit a model using the optim() function in R (or similar approaches for maximum likelihood estimation or maximum a posteriori approaches). Here, the optimiser function proposes different parameter values and evaluates the maximum likelihood for each proposal, in order to move along a gradient until it reaches a maximum value. These steps are illustrated below - they look chaotic as the optimiser initially makes large movements but there are then several small steps near the maximum.
+
+
+<!-- Replace the URL with the deployed Shiny app URL. -->
+<iframe src="https://01a1e980-9d52-9966-efa2-5582248caeeb.share.connect.posit.cloud/"
+        width="100%"
+        height="750"
+        style="border:none;">
+</iframe>

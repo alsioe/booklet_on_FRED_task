@@ -1,0 +1,12 @@
+name: ferd-02-grid-search
+title: ferd-02-grid-search
+username: johan-alsioe
+account: johan-alsioe
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a1e974-db4c-4e82-d031-1a1a908fea3f
+bundleId:
+url: https://connect.posit.cloud/johan-alsioe/content/01a1e974-db4c-4e82-d031-1a1a908fea3f
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

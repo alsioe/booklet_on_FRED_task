@@ -1,0 +1,11 @@
+# Single-subject Bayesian estimation with Stan
+
+When we use Bayesian statistics to fit a model to the data, the sampler does not scan the entire parameter space with equal interest and it does not look for maximum likelihood (point) estimates. Instead, we get the "samples" (parameter combinations) from the likelihood distribution. These samples together represent the "posterior distribution", the likelihoods of the parameter values given the data and the priors.
+
+
+<!-- Replace the URL with the deployed Shiny app URL. -->
+<iframe src="https://01a1e981-2980-0a21-5d4f-69d184b38774.share.connect.posit.cloud/"
+        width="100%" 
+        height="750" 
+        style="border:none;">
+</iframe>

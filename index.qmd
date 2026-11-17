@@ -1,0 +1,5 @@
+# Welcome
+
+This interactive booklet introduces simulation and single-subject model fitting for the Fixed Ratio Effort Discounting (FRED) task.
+
+Each chapter embeds a separately hosted Shiny application. Replace the example URLs with your own deployed app addresses.

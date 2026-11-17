@@ -1,0 +1,29 @@
+# Grid search
+
+## Fitting models to observed choices
+
+In an experiment we will only see the data and we then need to fit a model to the data to determine, using maximum likelihood estimation or other mechanisms, 1) which model (or models) is most likely to have governed the choices made by the subject and 2) which parameter values best describe the behaviour observed.
+
+We will illustrate four different approaches to achieve this.
+
+1) Grid search
+2) Maximum likelihood estimation (MLE) with a function optim()
+3) Maximum a posteriori (MAP) sampling using priors
+3) Bayesian modelling using Stan
+
+We will regularise the estimates using our knowledge about likely values of $\alpha$, $\beta$, and $\epsilon$. This will ensure that we get good fits that do not drift off to extreme values (more on this soon!). This approach requires us to choose PRIORS for all three parameters separately. Illustrated below is the joint likelihood across a range of parameter values. Note that $\alpha$ is bounded by 0 and 1, and that $\beta$ is bounded by 0.
+
+
+## Exploring the parameter space
+
+Grid search simply loops across a large number of different combinations of parameter values and calculates, for each of these combinations, the log likelihood of those paramaters, given the data. This process is slow but explores the entire parameter space which can sometimes be useful.
+
+Shown below is the normal grid search to the left and, to the right, a grid search where the parameter values that the experimenter (you!) deem unresonable are penalised using prior distributions of likelihoods for all the parameters (illustrated by the grey plot in the centre). Note how the parameter combination with the maximum likelihood (illustrated by the cross) shifts around depending on the priors. This has a stronger influence when the data are weak, e.g. when you only have few trials from the subject.
+
+
+<!-- Replace the URL with the deployed Shiny app URL. -->
+<iframe src="https://01a1e97e-81ea-fc44-7605-22f28efde00b.share.connect.posit.cloud/"
+        width="100%"
+        height="750"
+        style="border:none;">
+</iframe>
